@@ -6,11 +6,11 @@ Before we can continue with your application we would like you to complete a sho
 
 
 ###Test description
-    This is our short test. The objective here is to give you a short front end task to complete. 
-    This will let us see that you have a basic understanding  of HTML, CSS, and javascript and 
-    give us a general idea of your front end abilities. Please use any industry standards, best 
-    practices, profomance tips, and code style you support. We are looking for engineers with of 
-    all skill levels so dont worry, do your best, and thanks for taking the time to take our test.
+This is our short test. The objective here is to give you a short front end task to complete. This will let 
+us see that you have a basic understanding  of HTML, CSS, and javascript and give us a general idea of 
+your front end abilities. Please use any industry standards, best practices, profomance tips, and code 
+style you support. We are looking for engineers with of all skill levels so dont worry, do your best, 
+and thanks for taking the time to take our test.
 
 ###Requirements
     1. To get started fork this repo into your own github account. 
