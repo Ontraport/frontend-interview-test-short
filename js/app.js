@@ -9,6 +9,8 @@ App.controller("textRevealController", function($scope){
 			if($scope.newText){
 				$scope.displayText.push($scope.newText + ' - ' + secs);
 				$scope.newText= '';
+			} else {
+				return false
 			}
 	};
 });
