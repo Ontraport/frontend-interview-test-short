@@ -9,11 +9,11 @@
 	
 	<div id="header">
 		<div id="logo">
-			<img src="images/logo.png" alt="the network"/>
+			<img src="images/logo.png" alt="the network" width="225" height="40"/>
 		</div>	
 		<div id="search">
-			<form method="get" action="#">
-				<input type="text" name="post" placeholder="thoughts?"/>
+			<form method="get" action="#" id="postAction">
+				<input type="text" name="post" id="post" placeholder="thoughts?" autofocus/>
 				<button>Post</button>
 			</form>
 		</div>
@@ -21,8 +21,11 @@
 	</div>
 	
 	<div id="page">
-
+		<ul></ul>
 	</div>
-
+	<script type="text/template" id="postTemplate">
+		<li>{{text}} - {{num}}</li>
+	</script>
+	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
