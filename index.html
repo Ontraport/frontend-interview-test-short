@@ -1,28 +1,42 @@
-<!DOCTYPE HTML >
-<html>
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
 <head>
 	<title>The network</title>
-	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+<body ng-controller="datePost">
 	
-	<div id="header">
-		<div id="logo">
-			<img src="images/logo.png" alt="the network"/>
-		</div>	
-		<div id="search">
-			<form method="get" action="#">
-				<input type="text" name="post" placeholder="thoughts?"/>
-				<button>Post</button>
-			</form>
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6" id="logo">
+					<img src="images/logo.png" alt="the network"/>
+				</div>	
+				<div class="col-sm-6" id="search">
+					<form ng-submit="submit()">
+						<input id="inputField" type="text" ng-model="text" name="post" placeholder="thoughts?" required />
+						<input type="submit" name="submit" value="Post"/>
+					</form>
+				</div>
+			</div>
 		</div>
-		<br>
-	</div>
-	
-	<div id="page">
+	</header>
 
+	<div class="container">
+		<section id="page" ng-show="postList[0]">
+			<article ng-repeat="post in postList">{{post.text}} - <time>{{post.second}}</time></article>
+		</section>
 	</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
+
 
 </body>
 </html>
