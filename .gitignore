@@ -1,3 +1,4 @@
 *pyc
 *py~
-
+flask/*
+database/*
