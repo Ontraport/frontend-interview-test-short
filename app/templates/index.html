@@ -2,5 +2,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-	hihihi
+    {% if data_dict: %}
+	    {% for line in data_dict: %}
+		    <p>{{ line }}</p>
+	    {% endfor %}
+	{% else: %}
+	    <p><i>(Currently no postings!)</i></p>
+	{% endif %}
 {% endblock %}

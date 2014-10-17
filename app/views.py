@@ -1,24 +1,21 @@
-from flask import render_template, flash, redirect
 from app import app
+from flask import redirect, render_template, request, url_for
+from helpers import process_database, new_posting
+import os
 
-
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET'])
+@app.route('/index', methods=['GET'])
 def index():
-    user = {'nickname': 'Miguel'}
-    posts = [
-        {
-            'author': {'nickname': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'nickname': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        }
-    ]
+    database_path = os.path.join(os.getcwd(), app.config['PATH_TO_DATA'])
+    data_dict = process_database(database_path)
     return render_template('index.html',
-                           title='Home',
-                           user=user,
-                           posts=posts)
+                           data_dict = data_dict)
 
-
+@app.route('/', methods=['POST'])
+@app.route('/index', methods=['POST'])
+def posting():
+    database_path = os.path.join(os.getcwd(), app.config['PATH_TO_DATA'])
+    new_post = str(request.form['post'])
+    if (new_post.strip()):
+        new_posting(database_path, new_post)
+    return redirect(url_for('index'))
