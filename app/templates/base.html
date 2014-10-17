@@ -1,0 +1,25 @@
+<!DOCTYPE HTML >
+<html>
+<head>
+    <title>The Network</title>
+    <link rel="stylesheet" type="text/css" href="static/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css" />
+</head>
+<body>
+    <div id="header">
+        <div id="logo"><img style="padding-left: 20px;" src="static/img/logo.png" alt="the network"/></div>  
+        <div id="search">
+             <form action="" method="post" name="submit_post">
+                <input type="text" name="post" placeholder="Thoughts?"/>
+                <button>Post</button>
+            </form>
+        </div>
+        <div id="search">
+        </div>
+        <br>
+    </div>
+    <div id="page">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
