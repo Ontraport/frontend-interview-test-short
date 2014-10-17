@@ -1,6 +1,6 @@
 from app import app
 from flask import redirect, render_template, request, url_for
-from helpers import process_database, new_posting
+from helpers import new_posting, process_database
 import os
 
 @app.route('/', methods=['GET'])
@@ -16,6 +16,7 @@ def index():
 def posting():
     database_path = os.path.join(os.getcwd(), app.config['PATH_TO_DATA'])
     new_post = str(request.form['post'])
-    if (new_post.strip()):
+    # If the new 'post' is not just a blank 'Enter'
+    if new_post.strip():
         new_posting(database_path, new_post)
     return redirect(url_for('index'))
