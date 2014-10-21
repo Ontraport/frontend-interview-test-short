@@ -12,13 +12,16 @@ code style that you support. We are looking for engineers with varying skill lev
 Thank you for taking the time to take our test.
 
 ###Requirements:
+0. All computation must take place on the client. Sorry no posting to the server, we want to see your
+   front end skills.
 1. To get started fork this repo into your own GitHub account. 
 2. Using the existing form markup in `index.html`, create a script that on form submit 
    prepends the contents of the from `<input type="text" name="post" placeholder="thoughts?"/>` 
    to `<div id="page">`. 
 3. For each input value prepended, concatenate the second of the current browser date to 
    the input value.
-4. Once you finish coding, you can submit it to us in one of two ways. 1. Get the code into your github repository and issue a pull request. OR 2. Zip up your code and send an email to recruiting@ontraport.com with the subject line "Front-end short test". 
+4. Commit your code to your public git repo or zip it up. Then send us an email with the subject 
+   "Front-end short test" that contains a link to your repo or has your test zip attached.
 
 Feel free to use any JS or CSS frameworks.
 
