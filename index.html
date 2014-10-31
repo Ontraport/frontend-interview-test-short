@@ -23,6 +23,31 @@
 	<div id="page">
 
 	</div>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+	$(function() {
+		var $form = $('form', '#search');
+		var $input = $('input[name=post]', $form);
+		var $page = $("#page");
 
+		$form.on('submit', function(e) {
+			e.preventDefault();
+			_addInputTextToPage();
+		});
+
+		function _addInputTextToPage() {
+			var html = _buildHTML();
+			$page.prepend(html);
+			$input.val('');
+		}
+
+		function _buildHTML() {
+			return $("<div></div>", {
+				text: $.trim($input.val()) + " - " + new Date().getSeconds()
+			});
+		}
+
+	});
+</script>
 </body>
 </html>
