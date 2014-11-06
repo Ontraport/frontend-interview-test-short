@@ -82,13 +82,19 @@ background: rgba( 255, 255, 255, 0.3 );
 }
 
 .rand1{
-	
+	font-family: helvetica;
+	font-size: 2em;
+	color: red;
 }
 .rand2{
-	
+	font-family: helvetica;
+	font-size: 2em;
+	color: blue;
 }
 .rand3{
-	
+	font-family: helvetica;
+	font-size: 2em;
+	color: white;
 }
 
 
