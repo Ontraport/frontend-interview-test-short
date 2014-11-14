@@ -73,9 +73,11 @@ OntTest.TestPlugin.prototype.destroyOntPlugin = function(){
     }
     this.options = null;
     this.element = null;
-    this.formSelector = null;
-    this.outputContainerSelector = null;
-    this.binder = null;
+    this.form = null;
+    this.outputContainer = null;
+    this.input = null;
+    //make sure this is scoped properly, could use native bind function here too
+    this.submitProxy = null;
 }
 
 OntTest.TestPlugin.DEFAULTS = {};
