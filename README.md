@@ -20,7 +20,9 @@ Thank you for taking the time to take our test.
    to `<div id="page">`. 
 3. For each input value prepended, concatenate the second of the current browser date to 
    the input value.
-4. Once you finish coding, you can submit it to us in one of two ways. 1. Get the code into your github repository and issue a pull request. OR 2. Zip up your code and send an email to recruiting@ontraport.com with the subject line "Front-end short test". 
+4. Once you finish coding, please
+   a. submit a pull request
+   b. then send an email with the subject line "Front-end short test" to recruiting@ontraport.com. Make sure to include your resume and a link to the pull request. 
 
 Feel free to use any JS or CSS frameworks.
 
