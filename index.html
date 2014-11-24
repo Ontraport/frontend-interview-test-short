@@ -26,3 +26,27 @@
 
 </body>
 </html>
+<script>
+
+    function formSubmit() {
+        var page, form;
+        page = document.getElementById('page');
+        form = document.forms[0];
+
+        // Submit event listener
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            var seconds, element;
+
+            // Initialize DOM elements
+            seconds = new Date().getSeconds();
+            element = document.createElement('li');
+            element.innerHTML = this.elements["post"].value + " - " +  seconds;
+
+            page.insertBefore(element,page.firstChild);
+
+        });
+    }
+    
+    formSubmit();
+</script>
