@@ -1,11 +1,100 @@
-<!DOCTYPE HTML >
+<!DOCTYPE HTML>
 <html>
 <head>
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<!-- <script type="text/javascript" src="script.js"></script> -->
+	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
 </head>
 <body>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+// PROCESSES OF TRIAL AND ERROR...
+
+// var addedText = $('input[name="post"]').val();
+
+// var myNestedArray = [["number one", "46"], ["number two", "4"], ["number three", "20"]];
+
+// var a = "number one";
+// var b = "number two";
+// var c = "number three";
+
+	// THIS ISN'T WORKING
+	 // $("button").click(function () {
+	 // 	if ( $(addedText).val() === "number one") {
+	 // 	$("#page").prepend($ (addedText + "-" + "46") );
+	 // 	}
+  //   	else if ( $(addedText).val() === "number two") {
+  //   	$("#page").prepend( $(addedText + "-" + "4") );
+  //   	}
+  //   	else {
+  //   	$("#page").prepend( $(addedText + "-" + "20") );
+  //   	}
+
+  	// NEITHER IS THIS. TESTED ALERT AND THAT WORKS.
+    // $('input[value="Post"]').click(function () {
+    	// var toAdd = $('input[name="post"]').val();
+    	// $("#page").prepend('<div class="rand1">' + toAdd + '</div>'))
+    	// if ('input[name="post"]' == a) {
+    	// 	$("#page").prepend("<p>number one</p>" + "-" + "46");
+    	// 	// alert("Something is one!");
+    	// }
+    	// else if (addedText == b) {
+    	// 	$("#page").prepend( $(addedText + "-" + "20") );
+    	// }
+    	// else {
+    	// 	alert("Something went wrong!");
+    	// }
+
+    	// OK SOMETHING IS SERIOUSLY WRONG
+    	// $("form").submit(function () {
+    	// var addedText = $('input[name="post"]').val();
+    	// $("#page").prepend('<div class="rand1">' + addedText + '</div>'))
+    	// if ('input[name="post"]' == a) {
+    	// 	$("#page").prepend("<p>number one</p>" + "-" + "46");
+    	// 	// alert("Something is one!");
+    	// }
+    	// else (addedText == c) {
+    	// 	$("#page").prepend( $(addedText + "-" + "20") );
+    	// }
+    	// else {
+    	// 	alert("Something went wrong!");
+    	// }
+
+			
+		// LETS TEST PREPEND --- OK. THIS CODE FLASHES PREPENDED CODE. BUT WE DON'T WANT THAT!
+		// $("input[value=Post]").click(function(){
+  //   		var toAdd = $("input[name=post]").val();
+		// 	$("#page").prepend(toAdd)
+  //   	});
+
+		// THIS CODE ACTUALLY PUTS WORDS IN THE DIV!!!
+		// $("form").submit(function(data){
+	 // 	 	data.preventDefault();
+  //    		var toAdd = $("input[name=post]").val();
+		// 	$("#page").prepend("<div class=rand1>" + toAdd + "</div>")
+  //       });
+		
+		// LETS TRY IT WITH CONDITIONS. HOLY SMOKES! IT WORKED!
+		$("form").submit(function(data) {
+	  	 	data.preventDefault();
+    		var toAdd = $("input[name=post]").val();
+			if (toAdd === "number one") {
+				$("#page").prepend("<div class=rand1>" + toAdd + "&nbsp" + "-" + "&nbsp" + "46" + "</div>" )
+			}
+			else if (toAdd === "number two") {
+				$("#page").prepend("<div class=rand2>" + toAdd + "&nbsp" + "-" + "&nbsp" + "4" + "</div>" )
+			}
+			else {
+				$("#page").prepend("<div class=rand3>" + toAdd + "&nbsp" + "-" + "&nbsp" + "20" + "</div>" )
+			}
+		});
+});
+
+</script>
 	
 	<div id="header">
 		<div id="logo">
@@ -26,3 +115,4 @@
 
 </body>
 </html>
+
