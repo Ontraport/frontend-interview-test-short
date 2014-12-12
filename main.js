@@ -4,7 +4,7 @@ var formInput = $("#search input[name='post']");
 //focus on the input as soon as the document is ready for immediate typing.
 formInput.focus();
 //on submit, run the block of code inside the function and pass along the event.
-	$('form').on('submit', function(e){
+	$('#search form').on('submit', function(e){
 		//prevent the form from submitting any data.
 		e.preventDefault();
 		//make sure some sort of text was added to the input, if not, do nothing
