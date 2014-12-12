@@ -1,11 +1,14 @@
 <!DOCTYPE HTML >
-<html>
+<html ng-app="displayText">
 <head>
+	<meta charset="utf-8" />
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+	<script src="app.js"></script>
 </head>
-<body>
+<body ng-controller="submitText">
 	
 	<div id="header">
 		<div id="logo">
@@ -13,15 +16,17 @@
 		</div>	
 		<div id="search">
 			<form method="get">
-				<input type="text" name="post" placeholder="thoughts?"/>
-				<input type="submit" value="Post">
+				<!-- Added "required" to prevent user from submitting the form without any input -->
+				<input type="text" name="post" placeholder="thoughts?" ng-model="inputText" required/>
+				<button ng-click="print(inputText)">Submit</button>
 			</form>
 		</div>
 		<br>
 	</div>
 	
 	<div id="page">
-
+		<!-- track by $index to avoid error when the inputs are duplicate -->
+		<p ng-repeat="text in outputArr track by $index">{{text}}</p>
 	</div>
 
 </body>
