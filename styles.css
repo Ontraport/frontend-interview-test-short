@@ -58,6 +58,7 @@ br{
 	padding: 2px 3px;
 	border: 2px solid #A2C4DA;
 	font-size: 1.2em;
+	text-transform: capitalize;
 }
 
 #search button{
@@ -81,16 +82,7 @@ background: rgba( 255, 255, 255, 0.3 );
 	padding: 1em 2em;
 }
 
-.rand1{
-	
+#page p{
+	display: none;
+	text-transform: capitalize;
 }
-.rand2{
-	
-}
-.rand3{
-	
-}
-
-
-
-
