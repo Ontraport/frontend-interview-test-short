@@ -1,10 +1,12 @@
 $(document).ready(function(){
 
+var formInput = $("form input[name='post']");
+
 	$('form').on('submit', function(e){
-		var inputVal = $("form input[name='post']").val();
 		var second = new Date().getSeconds();
 		e.preventDefault();
-		$('#page').prepend("<p>" + inputVal + " - " + second + "</p>");
+		$('#page').prepend("<p>" + formInput.val() + " - " + second + "</p>");
+		formInput.val("");
 
 	});
 
