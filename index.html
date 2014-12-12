@@ -25,6 +25,7 @@
 	</div>
 	
 	<div id="page">
+		<!-- track by $index to avoid error when the inputs are duplicate -->
 		<p ng-repeat="text in outputArr track by $index">{{text}}</p>
 	</div>
 
