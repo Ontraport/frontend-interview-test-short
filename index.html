@@ -16,6 +16,7 @@
 		</div>	
 		<div id="search">
 			<form method="get">
+				<!-- Added "required" to prevent user from submitting the form without any input -->
 				<input type="text" name="post" placeholder="thoughts?" ng-model="inputText" required/>
 				<button ng-click="print(inputText)">Submit</button>
 			</form>
