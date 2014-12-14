@@ -23,6 +23,18 @@
 	<div id="page">
 
 	</div>
+	<script src="JQuery.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		//Scoped in search div to not confuse forms. Not really needed here but good practice. 
+		$("#search form").submit(function(event){
+			event.preventDefault();
+			var input = $(this).find("input[name='post']");
+			$("#page").prepend("<p>" + input.val() + " - " +  new Date().getSeconds() + "</p>");
+			input.val('');
+		})
+	})
+	</script>
 
 </body>
 </html>
