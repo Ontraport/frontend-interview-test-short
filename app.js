@@ -1,3 +1,8 @@
+/*
+** Author: Ed Huang
+** Description: Frontend interview test short for Ontraport.
+*/
+
 $(document).ready(function() {
     $('#search').submit(function(event) {
         var x = new Date().getSeconds();
