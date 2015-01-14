@@ -22,8 +22,10 @@ Thank you for taking the time to take our test.
    the input value.
 4. Commit your code to your public git repo or zip it up. Then send us an email with the subject 
    "Front-end short test" that contains a link to your repo or has your test zip attached.
-
-Feel free to use any JS or CSS frameworks.
+   
+There is a time and place for javascript frameworks. This might not be it. We want to see your javascript skills so we 
+would like to see your solution be done in vanilla javascript, jQuery or a similar javascript library. That being said 
+if you feel strongly that this problem needs a framework by all means use one and tell us why.
 
 ###Example:
 Check out the GIF below to see a working example of what a finished test might act like. 
