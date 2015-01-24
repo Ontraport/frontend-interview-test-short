@@ -14,27 +14,50 @@ Number.prototype.toFixedDown = function(digits) {
 //Reg Exp to take only the last two values
 var removeLastTwo = new RegExp("..$");
 var removeLastOne = new RegExp(".$");
+
+//function to add to localStorage
+function appendToLocal(name, data){
+    var old = localStorage.getItem(name);
+    if(old === null) old = "";
+    localStorage.setItem(name, old + data);
+}
+
+//Make an array of objects to store data
+var postData = [];
 //On submit, post value of postInput to div
 submitButton.addEventListener("click", function(){
 	//Set up seconds, changes milliseconds to decimal values
+	postData.string = postInput.value;
 	var currentTime = (Math.floor(Date.now() / 1000)%60).toFixedDown(0);
 	//remove milliseconds by removing everything after decimal and then taking only the last two digits
 	var currentSeconds;
 	if (currentTime <10){
-		currentSeconds = removeLastOne.exec(currentTime);
+		currentSeconds = removeLastOne.exec(currentTime)[0];
+		postData.push({number: currentSeconds, postText: postInput.value});
 	}
 	else {
-		currentSeconds = removeLastTwo.exec(currentTime);
+		currentSeconds = removeLastTwo.exec(currentTime)[0];
+		console.log(currentSeconds);
+		postData.push({number: currentSeconds, postText: postInput.value});
 	}
 	//Create a div with input value and append to pageDiv
 	var newPost = document.createElement('div');
 	var inputText = document.createTextNode(postInput.value + " - " + currentSeconds);
 	newPost.appendChild(inputText);
-	pageDiv.appendChild(newPost);
+	// prepend the new post
+	pageDiv.insertBefore(newPost, pageDiv.firstChild);
+	localStorage.setItem('postData', JSON.stringify(postData));
 	//Prevent submit to fire, refreshing the page
 	event.preventDefault();
 });
 
+// //Use local storage rather than stopping the submit button
+// //only available for HTML5
+function fillPage(){
+	this.divText = postInput.value;
+	this.divNumber = "";
+}
+// console.log(postData);
 // //Use local storage rather than stopping the submit button
 // submitButton.addEventListener("click", function(){
 // 	//Set up seconds, changes milliseconds to decimal values
@@ -49,3 +72,10 @@ submitButton.addEventListener("click", function(){
 // 	//Prevent submit to fire, refreshing the page
 // 	event.preventDefault();
 // });
+if (localStorage){
+	console.log(JSON.parse(localStorage.getItem('postData')));
+	var newPost = document.createElement('div');
+	var inputText = document.createTextNode(postInput.value + " - " + currentSeconds);
+	newPost.appendChild(inputText);
+	pageDiv.appendChild(newPost);
+}
