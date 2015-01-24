@@ -54,8 +54,20 @@ submitButton.addEventListener("click", function(){
 	pageDiv.insertBefore(newPost, pageDiv.firstChild);
 	console.log(localStorage.getItem("postData"));
 	//Prevent submit to fire, refreshing the page
-	event.preventDefault();
+	// event.preventDefault();
 });
+
+if(localStorage){
+	var globalStorage = JSON.parse(localStorage.getItem("postData"));
+	for (var i = 0; i<globalStorage.length; i++){
+	var newPost = document.createElement('div');
+	// var inputText = document.createTextNode(postInput.value + " - " + currentSeconds);
+	var inputText = document.createTextNode(globalStorage[i].postText + " - " + globalStorage[i].number);
+	newPost.appendChild(inputText);
+	// prepend the new post
+	pageDiv.insertBefore(newPost, pageDiv.firstChild);
+	}
+}
 
 // //Use local storage rather than stopping the submit button
 // //only available for HTML5
