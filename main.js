@@ -44,17 +44,6 @@ submitButton.addEventListener("click", function(){
 	}
 
 	localStorage.setItem('postData', JSON.stringify(postDataObj));
-	console.log(localStorage.postData);
-	//Create a div with input value and append to pageDiv
-	var newPost = document.createElement('div');
-	// var inputText = document.createTextNode(postInput.value + " - " + currentSeconds);
-	var inputText = document.createTextNode(postDataObj[postDataObj.length-1].postText + " - " + currentSeconds);
-	newPost.appendChild(inputText);
-	// prepend the new post
-	pageDiv.insertBefore(newPost, pageDiv.firstChild);
-	// console.log(localStorage.getItem("postData"));
-	//Prevent submit to fire, refreshing the page
-	// event.preventDefault();
 });
 
 // if there is localStorage, add to DOM
