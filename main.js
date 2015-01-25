@@ -25,13 +25,12 @@ var lastDigit = new RegExp(".$");
 
 //On submit, post value of postInput to div
 submitButton.addEventListener("click", function(){
-	//Set up time, remove milliseconds by removing everything after decimal
-	var currentTime = (Math.floor(Date.now() / 1000)%60).removeDecimal();
-	var currentSeconds = (currentTime < 10) ? lastDigit.exec(currentTime)[0] : lastTwoDigits.exec(currentTime)[0];
+	//Set up seconds, remove milliseconds by removing everything after decimal
+	var currentTime = (Math.floor(Date.now() / 1000)%60);
 	//If local storage exists, change string back to array of objects 
 	//else make an empty array to store data
 	var postDataObj = (localStorage.postData) ? JSON.parse(localStorage.getItem("postData")) : [];
-	postDataObj.push({number: currentSeconds, postText: postInput.value});
+	postDataObj.push({number: currentTime, postText: postInput.value});
 	localStorage.setItem('postData', JSON.stringify(postDataObj));
 });
 
@@ -40,27 +39,9 @@ if(localStorage.postData){
 	var globalStorage = JSON.parse(localStorage.getItem("postData"));
 	for (var i = 0; i<globalStorage.length; i++){
 	var newPost = document.createElement('div');
-	// var inputText = document.createTextNode(postInput.value + " - " + currentSeconds);
-	console.log(globalStorage[i].postText);
 	var inputText = document.createTextNode(globalStorage[i].postText + " - " + globalStorage[i].number);
 	newPost.appendChild(inputText);
 	// prepend the new post
 	pageDiv.insertBefore(newPost, pageDiv.firstChild);
 	}
 }
-
-// function fillPage(){
-// 	this.divText = postInput.value;
-// 	this.divNumber = "";
-// }
-// console.log(localStorage.getItem("postData"));
-// //when the page loads
-// window.addEventListener("DOMContentLoaded",function (){
-// 	var globalArray = JSON.parse(localStorage.getItem("postData"));
-// });
-
-// //when the user is exiting the page
-// window.addEventListener('beforeunload', function( ) {
-//      localStorage.setItem("myItems",JSON.stringify(globalArray));
-
-// });
