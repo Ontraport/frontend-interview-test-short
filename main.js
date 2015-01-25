@@ -3,14 +3,15 @@
 
 //Test to see if localStorage is available to browser
 function storageTest(){
-    var test = 'test';
-    try {
-        localStorage.setItem(test, test);
-        localStorage.removeItem(test);
-        return true;
-    } catch(e) {
-        return false;
-    }
+	var test = 'test';
+	try {
+		localStorage.setItem(test, test);
+		localStorage.removeItem(test);
+		return true;
+	}
+    catch(e) {
+		return false;
+	}
 }
 
 //Store the input element as variables; querySelector is an HTML5 method
@@ -56,7 +57,7 @@ else {
 		newPost.appendChild(inputText);
 		pageDiv.insertBefore(newPost, pageDiv.firstChild);
 		}
-		//will prevent page from reloading rather than storing a cookie
+		//will prevent page from reloading
 		event.preventDefault();
 	});
 }
