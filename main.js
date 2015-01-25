@@ -1,7 +1,7 @@
 //We want to have the Javascript run after the site loads(all HTML elements set up)
 //Requires HTML5 in order to work
 
-//Test to see if localStorage is available
+//Test to see if localStorage is available to browser
 function storageTest(){
     var test = 'test';
     try {
@@ -25,7 +25,7 @@ if (storageTest() === true) {
 	submitButton.addEventListener("click", function(){
 		//Set up seconds, remove milliseconds by removing everything after decimal
 		var currentTime = (~~(Date.now() / 1000)%60);
-		//If local storage exists, change string back to array of objects 
+		//If postData exists in localStorage, change string back to array of objects 
 		//else make an empty array to store data
 		var postDataObj = (localStorage.postData) ? JSON.parse(localStorage.getItem("postData")) : [];
 		postDataObj.push({time: currentTime, postText: postInput.value});
@@ -50,12 +50,12 @@ else {
 		var currentTime = (~~(Date.now() / 1000)%60);
 		var postDataObj = [];
 		postDataObj.push({time: currentTime, postText: postInput.value});
-		//change array of obj to string to store in localStorage
+		for (var i = 0; i<postDataObj.length; i++){
 		var newPost = document.createElement('div');
 		var inputText = document.createTextNode(postDataObj[i].postText + " - " + postDataObj[i].time);
 		newPost.appendChild(inputText);
-		// prepend the new post
 		pageDiv.insertBefore(newPost, pageDiv.firstChild);
+		}
 		//will prevent page from reloading rather than storing a cookie
 		event.preventDefault();
 	});
