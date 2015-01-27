@@ -7,7 +7,8 @@ Before we can continue with your application we would like you to complete a sho
 
 ###Test description:
 The objective of this test is to have you complete a short front-end task. This will help 
-us gauge your understanding of frontend engineering. Please use any industry standards, best practices, performance tips and 
+us gauge your understanding of frontend engineering and let us know if you are ready to take our long test. Please use 
+any industry standards, best practices, performance tips and 
 code style that you support. We are looking for engineers with varying skill levels so do your best.
 Thank you for taking the time to take our test.
 
