@@ -24,5 +24,21 @@
 
 	</div>
 
+<script>
+(function() {
+	_=window.document;
+	var a,
+		b=_.getElementById("page"),
+		c=_.forms[0],
+		run = function(d) {
+			d.preventDefault();
+			a = _.createElement("div");
+			a.innerHTML=this.elements.post.value + " - " + (new Date).getSeconds();
+			b.insertBefore(a,b.firstChild);
+			c.reset()
+		};
+	c.addEventListener('submit', run);
+})()
+</script>
 </body>
 </html>
