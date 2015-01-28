@@ -24,5 +24,27 @@
 
 	</div>
 
+
+<script>
+    // add event listener to form submission
+	document.querySelector('form').addEventListener('submit', function(ev) {
+        
+	    // prevent default event 
+		ev.preventDefault();
+		
+		// fetch data from input field 0 - "the post" content
+		var post = document.getElementsByTagName("input")[0].value;
+		
+		// select div with id "page"
+		var pageDiv = document.getElementById('page');
+
+		// get the current date, get number of seconds
+		var seconds = new Date().getSeconds();
+
+		// add new "post" and "seconds" data to the div's innerHTML 
+		pageDiv.innerHTML = "<br><br>" + post + " - " + seconds + pageDiv.innerHTML;
+	
+	});
+</script>
 </body>
 </html>
