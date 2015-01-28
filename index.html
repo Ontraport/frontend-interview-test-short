@@ -23,6 +23,24 @@
 	<div id="page">
 
 	</div>
-
+	<script type='text/javascript'>
+		document.body.onload = function(){
+			if(document.forms.length > 0){			
+				var form = document.forms[0];
+				form.addEventListener("submit",function(e){
+					e.preventDefault();
+					if(typeof  document.getElementById("page") != "undefined"){
+						var pageContent = document.getElementById("page").innerHTML;
+						if(typeof form.elements[0] != "undefined"){
+							var formContent = form.elements[0].value;						
+							var seconds = new Date().getSeconds();
+							document.getElementById("page").innerHTML = "<div class='formContent'>" + formContent + " - " + seconds + "</div>" + pageContent;
+							form.elements[0].value = "";
+						}			
+					}
+				});
+			}
+		}		
+	</script>
 </body>
 </html>
