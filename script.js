@@ -1,5 +1,5 @@
 /**********************************************************
-FUNCTION: appendText()
+FUNCTION: prependTextToDiv()
 RECEIVES: Input Text (obj) textInput, String targetDivId
 RETURNS: True on success, False on failure.
 DESCRIPTION: prependTextToDiv() receives a string denoting the id of
