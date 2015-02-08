@@ -13,7 +13,7 @@
 			<img src="images/logo.png" alt="the network"/>
 		</div>
 		<div id="search">
-			<form method="get" onsubmit="appendText(this.elements['post'].value, 'page');return false;">
+			<form method="get" onsubmit="return prependTextToDiv(this.elements['post'], 'page')">
 				<input type="text" name="post" placeholder="thoughts?"/>
 				<input type="submit" value="Post">
 			</form>
