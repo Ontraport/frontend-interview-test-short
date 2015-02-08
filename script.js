@@ -15,23 +15,22 @@ function appendText(textToAppend, targetDivId)
 	if(!targetDiv)
 	{
 		alert("Error: The target div was not found on the page");
-		//Normally we would return true here to prevent form submission
+		//Normally we would return false here to prevent form submission
 		//return false;
 	}
-
-	if(!textToAppend || textToAppend.length == 0)
+	else if(!textToAppend || textToAppend.length == 0)
 	{
 		alert("Error: The input string was empty or null");
-
-		//Normally we would return true here to prevent form submission
+		//Normally we would return false here to prevent form submission
 		//return false;
 	}
-
-	var date = new Date();
-	var previousText = targetDiv.innerHTML;
-	previousText = textToAppend + " - " + date.getSeconds() + "<br/>" + previousText;
-	targetDiv.innerHTML = previousText;
-
-	//Normally we would return true here to allow form submission
-	//return true;
+	else
+	{
+		var date = new Date();
+		var previousText = targetDiv.innerHTML;
+		previousText = textToAppend + " - " + date.getSeconds() + "<br/>" + previousText;
+		targetDiv.innerHTML = previousText;
+		//Normally we would return true here to allow form submission
+		//return true;
+	}
 }
