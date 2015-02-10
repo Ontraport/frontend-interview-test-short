@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
-  console.log('Dom loaded');
 
   var form = document.getElementsByTagName("form"),
 			postButton = document.getElementsByTagName("input")[1],
@@ -10,28 +9,33 @@ document.addEventListener("DOMContentLoaded", function(event) {
  	
 	// Add ul to #page
  	page.appendChild(ul);
-	
-
 
  	// Handle form button on click
 	postButton.onclick = function(e) {
+
 		thoughtsValue = document.getElementsByTagName('input')[0].value;
 
+		// Does this thing get the value? 
 		console.log("clicked", thoughtsValue);
 
 		// Add new li with contents
- 		var li = document.createElement("li");
- 		ul.appendChild(li);
- 		document.getElementsByTagName('li')[0].innerHTML += thoughtsValue;
-
+ 		var newLI = document.createElement("li"),
+ 				pageUL = document.getElementsByTagName('ul')[0];
+ 		
+ 		// Set value of newLI to input text			
+ 		newLI.innerHTML = thoughtsValue;
 		
+		// Add newLI to pageUL as firstChild 		
+ 		pageUL.insertBefore(newLI, pageUL.firstChild);
 
 		// clear input text
 		if (input.value != '') {
 			input.value = '';
 		}
 
+		// Prevent default action for input submit
 		e.preventDefault();
+		
 	};
 
 	var submitForm = function(e) {
@@ -40,5 +44,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		console.log(thoughtsValue);
 	}
 
-	console.log('loaded');
+	// Did my script load?
+	console.log('script loaded');
 });
