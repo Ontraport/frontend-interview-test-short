@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
 
-  var form = document.getElementsByTagName("form"),
-			postButton = document.getElementsByTagName("input")[1],
+  var postButton = document.getElementsByTagName("input")[1],
 			input = document.getElementsByTagName('input')[0],
 			thoughtsValue = document.getElementsByTagName('input')[0].value,
 			page = document.getElementById("page"), // all above vars work
@@ -10,20 +9,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	// Add ul to #page
  	page.appendChild(ul);
 
- 	// Handle form button on click
+ 	// Handle input button on click
 	postButton.onclick = function(e) {
 
 		// Get current input text value
 		thoughtsValue = document.getElementsByTagName('input')[0].value;
 
 		// Get current date in seconds
-		var currentDate = new Date();
-		var seconds = currentDate.getSeconds();
+		var currentDate = new Date(),
+				seconds = currentDate.getSeconds();
 
-		// Does this thing get the value? 
+		// Does this thing get the value on click? 
 		console.log("clicked", thoughtsValue);
 
-		// Add new li with contents
+		// Create new li & get page ul
  		var newLI = document.createElement("li"),
  				pageUL = document.getElementsByTagName('ul')[0];
  		
@@ -42,12 +41,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		e.preventDefault();
 
 	};
-
-	var submitForm = function(e) {
-		e.preventDefault();
-		page.innerHTML += thoughtsValue; // works
-		console.log(thoughtsValue);
-	}
 
 	// Did my script load?
 	console.log('script loaded');
