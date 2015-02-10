@@ -81,6 +81,8 @@ background: rgba( 255, 255, 255, 0.3 );
 	padding: 1em 2em;
 }
 
+ul { list-style: none; }
+
 .rand1{
 	
 }
