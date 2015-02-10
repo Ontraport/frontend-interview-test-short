@@ -6,8 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			input = document.getElementsByTagName('input')[0],
 			thoughtsValue = document.getElementsByTagName('input')[0].value,
 			page = document.getElementById("page"), // all above vars work
- 			ul=document.createElement('ul'),
- 			li = document.createElement("li");
+ 			ul=document.createElement('ul');
  	
 	// Add ul to #page
  	page.appendChild(ul);
@@ -21,7 +20,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		console.log("clicked", thoughtsValue);
 
 		// Add new li with contents
-		page.innerHTML += thoughtsValue;
+ 		var li = document.createElement("li");
+ 		ul.appendChild(li);
+ 		document.getElementsByTagName('li')[0].innerHTML += thoughtsValue;
+
+		
 
 		// clear input text
 		if (input.value != '') {
