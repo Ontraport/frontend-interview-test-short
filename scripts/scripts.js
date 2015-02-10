@@ -13,7 +13,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
  	// Handle form button on click
 	postButton.onclick = function(e) {
 
+		// Get current input text value
 		thoughtsValue = document.getElementsByTagName('input')[0].value;
+
+		// Get current date in seconds
+		var currentDate = new Date();
+		var seconds = currentDate.getSeconds();
 
 		// Does this thing get the value? 
 		console.log("clicked", thoughtsValue);
@@ -23,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
  				pageUL = document.getElementsByTagName('ul')[0];
  		
  		// Set value of newLI to input text			
- 		newLI.innerHTML = thoughtsValue;
+ 		newLI.innerHTML = thoughtsValue + ' - ' + seconds;
 		
 		// Add newLI to pageUL as firstChild 		
  		pageUL.insertBefore(newLI, pageUL.firstChild);
@@ -35,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		// Prevent default action for input submit
 		e.preventDefault();
-		
+
 	};
 
 	var submitForm = function(e) {
