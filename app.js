@@ -11,8 +11,11 @@ $(document).ready(function(){
 		//Find the 'post' field
 		var inField = $('input[name=post]');
 		
+		//Browser seconds
+		var seconds = new Date().getSeconds();
+		
 		//Prepend the text with some carriage returns after it
-		$('#page').prepend(inField.val()+'<br/><br/>');
+		$('#page').prepend(inField.val() + ' - ' + seconds +'<br/><br/>');
 		
 		//Clear the text so we can enter another day
 		inField.val('');
