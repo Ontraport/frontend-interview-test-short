@@ -4,6 +4,25 @@
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<script src="jquery-1.11.2.js"></script>
+	<script>
+		$("document").ready(function() 
+		{
+			
+			var pageElement = $("#page");
+			var thoughtPost = $("input[name='post']");
+			var thoughElement = $("form[method='get']");
+			thoughElement.submit(function(e)
+			{
+				var text = thoughtPost.val() + " - " + new Date().getSeconds();
+				var entry = $('<div/>', {class:'pageEntry', text:text});
+				thoughtPost.val("");
+				pageElement.append(entry);
+				return false;
+			});
+		});
+		
+	</script>
 </head>
 <body>
 	
@@ -12,7 +31,7 @@
 			<img src="images/logo.png" alt="the network"/>
 		</div>	
 		<div id="search">
-			<form method="get">
+			<form id="thoughts" method="get">
 				<input type="text" name="post" placeholder="thoughts?"/>
 				<input type="submit" value="Post">
 			</form>
@@ -21,7 +40,6 @@
 	</div>
 	
 	<div id="page">
-
 	</div>
 
 </body>
