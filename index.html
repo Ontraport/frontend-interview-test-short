@@ -26,25 +26,26 @@
 <script>
 var f = window.location.search;
 
-if( (f.search(/^\?post=/) >= 0) && f != '' ){
+if( (f.search(/^\?post=/) >= 0) && f != "" ){
         //gotta decode the symbols or they look weird
-        f = decodeURIComponent(f.replace(/^\?post=/,''));
-        if( f != '' ){
+        f = decodeURIComponent(f.replace(/^\?post=/,""));
+
+        var x = document.getElementById("page");
+        if( f != "" ){
                 var date = new Date();
                 var second = date.getSeconds();
 
-                if( sessionStorage.getItem('content') ){
-                        var n = sessionStorage.getItem('content');
-
-                        sessionStorage.setItem('content', f.concat(second).concat(n))
-                        document.getElementById('page').innerHTML = f.concat(second).concat(n);
+                if( sessionStorage.getItem("content") ){
+                        var n = sessionStorage.getItem("content");
+                        sessionStorage.setItem("content", f + " - " + second + "<BR>" + n)
+                        x.innerHTML = f + " - " + second + "<BR>" + n;
                 } else {
-                        document.getElementById('page').innerHTML = f.concat(second);
-                        sessionStorage.setItem('content',f.concat(second) );
+                        x.innerHTML = f + " - " + second;
+                        sessionStorage.setItem("content",f + " - " +  second + "<BR>" );
                 }
         } else {
-                var n = sessionStorage.getItem('content');
-                document.getElementById('page').innerHTML = n;
+                var n = sessionStorage.getItem("content");
+                x.innerHTML = n;
                 alert("Please put a value");
         }
 
