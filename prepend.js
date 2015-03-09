@@ -1,4 +1,4 @@
-$("#search").submit(function() {
+$("#search").submit(function(event) {
 	var seconds = new Date().getSeconds();
 	var thoughts = $('input[name=post]');
 	$("#page").prepend(thoughts.val() + " - " + seconds + "<br/><br/>");
