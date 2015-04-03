@@ -4,18 +4,18 @@ window.addEventListener('load', function() {
 		e.preventDefault();
 
 		var form = document.getElementsByTagName('form')[0];
+		var posts = document.getElementById('page');
+		
+		// Create new post
+		var post = document.createElement('p');
 		var thoughts = document.getElementsByTagName('input')[0].value;
 		var seconds = new Date().getSeconds();
-		var posts = document.getElementById('page');
-		var post = document.createElement('p');
-		var first = posts.firstChild;
-
 		post.innerHTML = thoughts + " - " + seconds;
 
-		if (first == undefined) {
+		if (!posts.firstChild) {
 			posts.insertBefore(post, null);
 		} else {
-			posts.insertBefore(post, first);
+			posts.insertBefore(post, posts.firstChild);
 		};
 
 		form.reset();
