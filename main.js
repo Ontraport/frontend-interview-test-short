@@ -39,7 +39,7 @@ $(document).ready(function(){
 
     var val = $('[name="post"]').val();
 
-    $('#page').append(new Post(val));
+    new Post(val);
 
   })
 
