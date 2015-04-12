@@ -79,6 +79,7 @@ background: rgba( 255, 255, 255, 0.3 );
 	border: 1px solid #ffffff;
 	margin: 10px auto 0px;
 	padding: 1em 2em;
+	transition:.75s;
 }
 
 .rand1{
@@ -90,6 +91,14 @@ background: rgba( 255, 255, 255, 0.3 );
 .rand3{
 	
 }
+
+h2{font-size:25px;}
+aside{display:inline-block;font-weight:bold; color:#fff; padding:5px 10px; background; background: grey;}
+.post{position:relative; background:#fff; padding:20px 30px; margin:0 0 25px 0; transition:.45s; opacity:0; transform:scale(.95); text-transform:uppercase;}
+.post.active{opacity:1; transform:scale(1);}
+.post:last-child{margin:0;}
+.delete{position:absolute; top:15px; right:15px; padding:5px; color:red; transition:.25s; -webkit-transition:.25s; -moz-transition:.25s; cursor:pointer;}
+.delete:hover{transform:scale(.75); -webkit-transform:scale(.75); -moz-transform:scale(.75);}
 
 
 
