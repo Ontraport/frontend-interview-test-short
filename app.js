@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", init);
 
-function init(e) {
+function init() {
     var page = document.getElementById('page');
     var form = document.getElementsByTagName('form')[0];
 
