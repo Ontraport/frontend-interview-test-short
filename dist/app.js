@@ -1,0 +1,1 @@
+function init(){var e=document.getElementById("page"),t=document.getElementsByTagName("form")[0];t.addEventListener("submit",function(t){var n=new Date,a=document.createElement("span");a.className="form-post",a.innerHTML=this.post.value+" - "+n.getSeconds(),e.insertBefore(a,e.firstChild),t.preventDefault()})}document.addEventListener("DOMContentLoaded",init);
