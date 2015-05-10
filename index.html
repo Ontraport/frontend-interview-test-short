@@ -25,4 +25,22 @@
 	</div>
 
 </body>
+<script	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript">
+$(window).on("load", function()){
+	function postThoughts(){
+		var currentSeconds = new Date().getSeconds(),
+		postedInput = $("input[name='post']"),
+		thoughts = $(postedInput).val(),
+		thoughtEntry = "<li>" + thoughts + " - " + currentSeconds + " seconds </li>";
+	$("#page").prepend(thoughtEntry);
+	$(postedInput).val("");
+	}
+	$("form").on("submit", function(e){
+	e.preventDefault();
+	postThoughts();
+	});
+});	
+</script>
+
 </html>
