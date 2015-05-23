@@ -12,7 +12,7 @@
 			<img src="images/logo.png" alt="the network"/>
 		</div>	
 		<div id="search">
-			<form method="get">
+			<form method="get" onsubmit="return appendInfo();">
 				<input type="text" name="post" placeholder="thoughts?"/>
 				<input type="submit" value="Post">
 			</form>
@@ -23,6 +23,18 @@
 	<div id="page">
 
 	</div>
-
+	<script>
+		function appendInfo(){
+			var thought = document.querySelector("#search form input").value,
+				date = new Date(),
+				appendInfo = thought + " - " + date.getSeconds(),
+				target = document.getElementById("page"),
+				form = document.getElementsByTagName("form")[0];
+				
+			target.innerHTML += appendInfo + "<br>";
+			
+			return false;
+		}
+	</script>
 </body>
 </html>
