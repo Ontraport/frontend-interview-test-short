@@ -7,14 +7,14 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
 	</script>
 	<script>
-		var makeStuff = function(name){
+		var makeEntry = function(name){
 			$("#page").prepend("<div id='"+name+"'></div>")
 	        $("#txt_name").bind('keyup', function(){
 				$("#"+name).empty();
 				$("#"+name).prepend($(this).val());
 	        });
 		};
-		$(document).ready(function(){makeStuff("sub")})
+		$(document).ready(function(){makeEntry("sub")})
 		var num = 1;
 		$(document).on('click', '#button', function(event){
 			event.preventDefault();
@@ -28,7 +28,7 @@
 			} else {
 				$("#sub"+otr_num).append(" - "+n);
 			}
-			makeStuff("sub"+num);
+			makeEntry("sub"+num);
 			num+=1;
 		})
 	</script>
