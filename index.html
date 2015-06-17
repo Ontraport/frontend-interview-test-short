@@ -4,6 +4,34 @@
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+	</script>
+	<script>
+		var makeStuff = function(name){
+			$("#page").prepend("<div id='"+name+"'></div>")
+	        $("#txt_name").bind('keyup', function(){
+				$("#"+name).empty();
+				$("#"+name).prepend($(this).val());
+	        });
+		};
+		$(document).ready(function(){makeStuff("sub")})
+		var num = 1;
+		$(document).on('click', '#button', function(event){
+			event.preventDefault();
+			var d = new Date();
+			var n = d.getSeconds();
+			var otr_num = num - 1
+			$("#txt_name").unbind('keyup');
+			$("#txt_name").val("");
+			if (num == 1){
+				$("#sub").append(" - "+n);
+			} else {
+				$("#sub"+otr_num).append(" - "+n);
+			}
+			makeStuff("sub"+num);
+			num+=1;
+		})
+	</script>
 </head>
 <body>
 	
@@ -13,8 +41,8 @@
 		</div>	
 		<div id="search">
 			<form method="get">
-				<input type="text" name="post" placeholder="thoughts?"/>
-				<input type="submit" value="Post">
+				<input type="text" name="post" placeholder="thoughts?" id="txt_name"/>
+				<input type="submit" value="Post" id='button'>
 			</form>
 		</div>
 		<br>
