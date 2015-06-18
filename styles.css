@@ -81,6 +81,11 @@ background: rgba( 255, 255, 255, 0.3 );
 	padding: 1em 2em;
 }
 
+#page li{
+	list-style: none;
+	margin-bottom: 1%;
+}
+
 .rand1{
 	
 }
