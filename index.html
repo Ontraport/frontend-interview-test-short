@@ -4,18 +4,6 @@
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
-	<script>
-	$(document).ready(function(){
-    $('input:submit').click(function(event) {
-        event.preventDefault();
-        var d = new Date();
-
-        var input_post = $('input[name=post]').val();
-        $("#page").prepend("<p>" + input_post  + " " + "-"  + d.getTime() + "</p>");
-    });
-});
-	</script>
 </head>
 <body>
 	
@@ -36,5 +24,19 @@
 
 	</div>
 
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+
+        <script>
+        $(document).ready(function(){
+    $('input:submit').click(function(event) {
+        event.preventDefault();
+        var d = new Date();
+
+        var input_post = $('input[name=post]').val();
+        $("#page").prepend("<p>" + input_post  + " " + "-"  + d.getTime() + "</p>");
+    });
+});
+ 
+       </script>
 </body>
 </html>
