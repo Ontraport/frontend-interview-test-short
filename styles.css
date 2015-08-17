@@ -1,6 +1,6 @@
 /*
- * base styles 
- * 
+ * base styles
+ *
  */
 
 html{
@@ -17,10 +17,10 @@ body{
 	background: linear-gradient(top,  rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#85b2d3',GradientType=0 ); /* IE6-9 */
 
-	
+
 	font-size: 13px;
 	min-width: 800px;
-	
+
 }
 
 br{
@@ -74,7 +74,8 @@ br{
 
 #page{
 	width: 800px;
-	
+	margin: 0 auto;
+
 background: rgba( 255, 255, 255, 0.3 );
 	border: 1px solid #ffffff;
 	margin: 10px auto 0px;
@@ -82,15 +83,11 @@ background: rgba( 255, 255, 255, 0.3 );
 }
 
 .rand1{
-	
+
 }
 .rand2{
-	
+
 }
 .rand3{
-	
+
 }
-
-
-
-
