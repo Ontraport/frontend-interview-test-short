@@ -7,5 +7,6 @@ $('form').submit(function(){
     var date = new Date();
     var secs = date.getSeconds();
 
-    $('#page').prepend(content + ' - ' + secs);
+    var post = ('<br>' + content + ' - ' + secs + '<br>');
+    $('#page').prepend(post);
 });
