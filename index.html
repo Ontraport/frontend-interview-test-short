@@ -6,11 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
-	
 	<div id="header">
 		<div id="logo">
 			<img src="images/logo.png" alt="the network"/>
-		</div>	
+		</div>
 		<div id="search">
 			<form method="get">
 				<input type="text" name="post" placeholder="thoughts?"/>
@@ -19,10 +18,19 @@
 		</div>
 		<br>
 	</div>
-	
-	<div id="page">
-
-	</div>
-
+	<div id="page"></div>
 </body>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+	$(document).ready( function() {
+		$("form").submit(function(e) {
+			e.preventDefault();
+			var input = $('[name="post"]').val();
+			var seconds = new Date().getSeconds();
+			$('#page').prepend('<p>'+input+' - '+seconds+'</p>');
+			var input = $('[name="post"]').val('');
+		})
+	});
+</script>
 </html>
