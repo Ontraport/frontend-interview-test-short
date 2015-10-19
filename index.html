@@ -21,7 +21,24 @@
 	</div>
 	
 	<div id="page">
+<script> 
 
+ document.querySelector('form').addEventListener('submit', function(ev) { 
+
+ var post = document.getElementsByTagName("Input")[0].value; 
+
+
+  ev.preventdefault();
+
+ 
+ var pagediv = document.getElementById('page'); 
+
+
+ var seconds = new Date().getSeconds(); 
+
+pagediv.innerHTML = "<br>" + post + " - " + seconds + pagediv.innerHTML;  });
+
+</script>
 	</div>
 
 </body>
