@@ -25,4 +25,40 @@
 	</div>
 
 </body>
+<script type='text/javascript'>
+	//Find Form on the page
+	var form = document.forms[0];
+	function prependPage(e) {
+		//prevent Default action of submission
+		if (e.preventDefault) e.preventDefault();
+		//gather input from text field and append seconds
+		var thoughts = document.getElementsByTagName('input')[0].value,
+			d = new Date(),
+			second = d.getSeconds(),
+			text = document.createTextNode(thoughts + ' - ' + second),
+			//create a new p node
+			element = document.createElement("p"),
+			//fetch the page to append
+			page= document.getElementById('page');
+
+		element.appendChild(text);
+		// prepend our span eleemnt to our section element
+		if(page.firstChild){
+			page.insertBefore(element, page.firstChild);
+		} else {
+			page.appendChild(element);
+		}
+		
+		//clear input
+		document.getElementsByTagName('input')[0].value = '';
+		//return false ot prevent form submission
+		return false;
+	}
+	
+	if (form.attachEvent) {
+		form.attachEvent("submit", prependPage);
+	} else {
+		form.addEventListener("submit", prependPage);
+	}
+</script>
 </html>
