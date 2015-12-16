@@ -11,8 +11,8 @@ var newPost = function(){
     var postText = $('#new_post_text').val();
     var postDate = new Date;
     var postTime = postDate.getSeconds();
-    var postWithTime = postText + " " + "-" + " " + postTime;
-    $('#page').prepend(postWithTime);
+    var postWithTime = postText + " " + "-" + " " + postTime + "\n";
+    $('#page ul').append("<li>" + postWithTime + "</li>");
 //clear the text field
     $('#new_post_text').val('');
   })
