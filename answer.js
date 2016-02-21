@@ -5,7 +5,7 @@ var callback = function(e) {
     elChild = document.createElement('div'),
     elContent = document.getElementsByName('post')[0].value;
 
-    elChild.innerHTML = elContent + '- ' + new Date().getSeconds();
+    elChild.innerHTML = elContent + ' - ' + new Date().getSeconds();
 
     el.insertBefore(elChild, el.firstChild);
 };
