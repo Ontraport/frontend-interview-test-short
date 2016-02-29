@@ -4,6 +4,7 @@
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+
 </head>
 <body>
 	
@@ -13,7 +14,7 @@
 		</div>	
 		<div id="search">
 			<form method="get">
-				<input type="text" name="post" placeholder="thoughts?"/>
+				<input type="text" name="post" placeholder="thoughts?" id="test" />
 				<input type="submit" value="Post">
 			</form>
 		</div>
@@ -23,6 +24,17 @@
 	<div id="page">
 
 	</div>
+	<script>	
+	var myform = document.forms[0],
+	    inputVal = myform.getElementsByTagName('input')[0],
+	    page = document.getElementById('page'),
+	    myDate = new Date(),
+	    second = myDate.getSeconds();
 
+	    myform.addEventListener('submit', function(e) {
+		e.preventDefault();
+		page.innerHTML += inputVal.value + ' - ' + second + '<br />';
+	})
+	</script>
 </body>
 </html>
