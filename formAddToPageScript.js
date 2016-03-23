@@ -1,0 +1,25 @@
+function getSecond()
+{
+	var retString = "", date = {};
+	date = new Date();
+	retString = " - " + date.getSeconds() + "<br><br>";
+	delete date;
+    return retString;
+};
+
+function addToPage(ev)
+{
+	var thought="";
+    ev.preventDefault(); // stop form from returning
+    thought += $('#search form input:first-child').val();
+    if(!thought) // if no user input disregard
+    {
+    	alert("Must have a valid thought.");
+    }
+    else
+    {
+		thought += getSecond(); // add seconds to output string
+     	$('#page').append(thought);
+     	$("#search form")[0].reset();
+    }
+};
