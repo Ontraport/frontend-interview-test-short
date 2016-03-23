@@ -4,41 +4,12 @@
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<!--jQuery lib -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!--form scripting functions -->
+	<script type="text/javascript" src = "formAddToPageScript.js"></script>
 </head>
 <body>
-
-    <!--jQuery lib -->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-	<script>
-
-		function getSecond()
-		{
-			var retString = "", date = {};
-			date = new Date();
-			retString = " - " + date.getSeconds() + "<br><br>";
-			return retString;
-		};
-
-        function addToPage(ev)
-        {
-        	var thought="";
-	        ev.preventDefault(); // stop form from returning
-	        thought += $('#search form input:first-child').val();
-	        if(!thought) // if no user input disregard
-	        {
-	        	alert("Must have a valid thought.");
-	        }
-	        else
-	        {
-     			thought += getSecond(); // add seconds to output string
-	         	$('#page').append(thought);
-	         	$("#search form").reset();
-	        }
-    	};
-
-    </script>
-	
 	<div id="header">
 		<div id="logo">
 			<img src="images/logo.png" alt="the network"/>
