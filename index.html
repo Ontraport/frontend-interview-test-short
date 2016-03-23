@@ -12,27 +12,30 @@
 
 	<script>
 
+		function getSecond()
+		{
+			var retString = "", date = {};
+			date = new Date();
+			retString = " - " + date.getSeconds() + "<br><br>";
+			return retString;
+		};
+
         function addToPage(ev)
         {
-	         ev.preventDefault();
-	         var thought = $('#search form input:first-child').val();
-	         if(!thought)
-	         {
-	         	// $('#page').append("hello world");
-	         	console.log("Tried to submit an empty string.\n")
-	         }
-	         else
-	         {
-	         	thought+="<br><br>";
-	         	thought+=getSecond();
+        	var thought="";
+	        ev.preventDefault(); // stop form from returning
+	        thought += $('#search form input:first-child').val();
+	        if(!thought) // if no user input disregard
+	        {
+	        	alert("Must have a valid thought.");
+	        }
+	        else
+	        {
+     			thought += getSecond(); // add seconds to output string
 	         	$('#page').append(thought);
-	         	$("#search form")[0].reset();
-	         }
+	         	$("#search form").reset();
+	        }
     	};
-
-
-
-
 
     </script>
 	
@@ -50,7 +53,7 @@
 	</div>
 	
 	<div id="page">
-
+		<br> 
 	</div>
 
 </body>
