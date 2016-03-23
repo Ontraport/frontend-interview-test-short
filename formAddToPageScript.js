@@ -19,7 +19,7 @@ function addToPage(ev)
     else
     {
 		thought += getSecond(); // add seconds to output string
-     	$('#page').append(thought);
+     	$('#page').prepend(thought);
      	$("#search form")[0].reset();
     }
 };
