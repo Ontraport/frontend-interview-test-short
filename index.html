@@ -6,13 +6,42 @@
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
+
+    <!--jQuery lib -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+	<script>
+
+        function addToPage(ev)
+        {
+	         ev.preventDefault();
+	         var thought = $('#search form input:first-child').val();
+	         if(!thought)
+	         {
+	         	// $('#page').append("hello world");
+	         	console.log("Tried to submit an empty string.\n")
+	         }
+	         else
+	         {
+	         	thought+="<br><br>";
+	         	thought+=getSecond();
+	         	$('#page').append(thought);
+	         	$("#search form")[0].reset();
+	         }
+    	};
+
+
+
+
+
+    </script>
 	
 	<div id="header">
 		<div id="logo">
 			<img src="images/logo.png" alt="the network"/>
 		</div>	
 		<div id="search">
-			<form method="get">
+			<form method="get" onsubmit="addToPage(event);">
 				<input type="text" name="post" placeholder="thoughts?"/>
 				<input type="submit" value="Post">
 			</form>
