@@ -2,7 +2,7 @@ function getSecond()
 {
 	var retString = "", date = {};
 	date = new Date();
-	retString = " - " + date.getSeconds() + "<br><br>";
+	retString = " - " + date.getSeconds() + "<br>";
 	delete date;
     return retString;
 };
@@ -18,7 +18,7 @@ function addToPage(ev)
     }
     else
     {
-		thought += getSecond(); // add seconds to output string
+		thought = "<br>" + thought + getSecond(); // add seconds to output string
      	$('#page').prepend(thought);
      	$("#search form")[0].reset();
     }
