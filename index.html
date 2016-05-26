@@ -24,5 +24,18 @@
 
 	</div>
 
+	<script>
+	
+	document.getElementsByTagName("form")[0].onsubmit = function() {myFunction()};
+
+	function myFunction() {
+
+		var userInput = document.getElementsByTagName("input")[0].value;
+		var currentDate = new Date();
+		
+		document.getElementById("page").innerHTML = userInput+currentDate.getSeconds();
+	}
+	</script>
+
 </body>
 </html>
