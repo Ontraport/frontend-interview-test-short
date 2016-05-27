@@ -1,9 +1,12 @@
-<!DOCTYPE HTML >
+<!DOCTYPE HTML>
 <html>
 <head>
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+    <script>
+    var result = "";
+	</script>
 </head>
 <body>
 	
@@ -20,9 +23,29 @@
 		<br>
 	</div>
 	
-	<div id="page">
+	<script>
+	
+	document.getElementsByTagName("form")[0].onsubmit = function(){return myFunction()};
 
-	</div>
+        function myFunction(){
+
+        	var userInput = document.getElementsByTagName("input")[0].value;
+        	var currentDate = new Date();
+        	var seconds = currentDate.getSeconds();
+
+        	result += userInput + seconds + "<br>";
+
+        	document.getElementById("page").innerHTML = result;
+        	return false;
+        }
+		
+	
+	</script>
+
+	<div id="page">
+    </div>
+
+	
 
 </body>
 </html>
