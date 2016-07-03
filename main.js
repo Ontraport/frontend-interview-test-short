@@ -1,6 +1,7 @@
 $(function() {
 
   var $page = $('#page');
+  var $textInput = $('input[type=text]');
 
   //Load data stored in localStorage if present
   if(!localStorage.getItem('arr')) localStorage.setItem('arr', JSON.stringify([]));
@@ -16,18 +17,20 @@ $(function() {
   $('form').on('submit', function(e) {
     e.preventDefault();
 
-    var date = new Date();
-    var seconds = date.getSeconds();
-
-    var $textInput = $('input[type=text]');
     var $inputVal = $textInput.val();
 
-    $page.prepend('<p>' + $inputVal + ' - ' + seconds + '</p>');
+    if($inputVal) {
 
-    arr.push({key: $inputVal, val: seconds});
-    localStorage.setItem('arr', JSON.stringify(arr));
+      var date = new Date();
+      var seconds = date.getSeconds();
 
-    $textInput.val('');
+      $page.prepend('<p>' + $inputVal + ' - ' + seconds + '</p>');
+
+      arr.push({key: $inputVal, val: seconds});
+      localStorage.setItem('arr', JSON.stringify(arr));
+
+      $textInput.val('');
+    }
 
   });
 
