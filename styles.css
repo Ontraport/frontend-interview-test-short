@@ -81,6 +81,11 @@ background: rgba( 255, 255, 255, 0.3 );
 	padding: 1em 2em;
 }
 
+button {
+	display: block;
+	margin: 0 auto;
+}
+
 .rand1{
 	
 }

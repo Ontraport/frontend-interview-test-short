@@ -2,6 +2,7 @@ $(function() {
 
   var $page = $('#page');
 
+  //Load data stored in localStorage if present
   if(!localStorage.getItem('arr')) localStorage.setItem('arr', JSON.stringify([]));
 
   var arr = JSON.parse(localStorage.getItem('arr'));
@@ -11,6 +12,7 @@ $(function() {
     $page.prepend('<p>' + curObj.key + ' - ' + curObj.val + '</p>');
   }
 
+  //Prepend text from text input
   $('form').on('submit', function(e) {
     e.preventDefault();
 
@@ -27,6 +29,13 @@ $(function() {
 
     $textInput.val('');
 
+  });
+
+  //clear data on page and in localStorage
+  $('button').on('click', function() {
+    localStorage.clear();
+    arr = [];
+    $page.empty();
   });
 
 });
