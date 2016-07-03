@@ -1,13 +1,10 @@
 $(function() {
-
   var $page = $('#page');
   var $textInput = $('input[type=text]');
 
   //Load data stored in localStorage if present
   if(!localStorage.getItem('arr')) localStorage.setItem('arr', JSON.stringify([]));
-
   var arr = JSON.parse(localStorage.getItem('arr'));
-
   for(var i = 0 ; i < arr.length ; i++) {
     var curObj = arr[i];
     $page.prepend('<p>' + curObj.key + ' - ' + curObj.val + '</p>');
@@ -18,12 +15,8 @@ $(function() {
     e.preventDefault();
 
     var $inputVal = $textInput.val();
-
     if($inputVal) {
-
-      var date = new Date();
-      var seconds = date.getSeconds();
-
+      var seconds = new Date().getSeconds();
       $page.prepend('<p>' + $inputVal + ' - ' + seconds + '</p>');
 
       arr.push({key: $inputVal, val: seconds});
@@ -31,7 +24,6 @@ $(function() {
 
       $textInput.val('');
     }
-
   });
 
   //clear data on page and in localStorage
@@ -40,5 +32,4 @@ $(function() {
     arr = [];
     $page.empty();
   });
-
 });
