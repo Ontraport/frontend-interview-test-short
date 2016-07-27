@@ -21,7 +21,7 @@ $(document).ready(function() {
     return $('input[name="post"]').val();
   }
 
-  $('#search form').submit(function() {
+  $('#search form').on('submit', function() {
     event.preventDefault();
 
     var inputText = getInputValue();
