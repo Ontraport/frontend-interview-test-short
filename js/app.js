@@ -1,27 +1,36 @@
-
 $(document).ready(function() {
   var container = $('<ul></ul>');
 
   function seconds() {
-    var s = new Date();
-    var second = s.getSeconds();
-    return second;
+    var date = new Date();
+    return date.getSeconds();
+  }
+
+  function makeHtml(txt) {
+    var item = $('<li></li>');
+    item.text(txt + ' - ' + seconds());
+    container.prepend(item);
+    $('#page').append(container);
+  }
+
+  function clearInputValue(str) {
+    $('input[name="post"]').val('');
+  }
+
+  function getInputValue() {
+    return $('input[name="post"]').val();
   }
 
   $('#search form').submit(function() {
     event.preventDefault();
 
-    var inputText = $('input[name="post"]').val();
+    var inputText = getInputValue();
 
     if(inputText) {
-      var item = $('<li></li>')
-      item.text(inputText + ' - ' + seconds());
-      $('input[name="post"]').val('');
+      makeHtml(inputText);
+      clearInputValue();
     } else {
       alert("You must enter something");
     }
-
-    container.prepend(item);
-    $('#page').append(container);
   })
 })
