@@ -1,0 +1,24 @@
+{
+  "name": "frontend-interview-test-short",
+  "version": "1.0.0",
+  "description": "ONTRAPORT Front-End Evaluation, Short Test =============================",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmcelveen/frontend-interview-test-short.git"
+  },
+  "author": "Kristina McElveen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmcelveen/frontend-interview-test-short/issues"
+  },
+  "homepage": "https://github.com/kmcelveen/frontend-interview-test-short#readme",
+  "dependencies": {
+    "eslint": "^3.2.2",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1"
+  }
+}
