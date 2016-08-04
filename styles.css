@@ -72,9 +72,10 @@ br{
 
 /*page content*/
 
-li {
+li{
   list-style: none;
-
+	margin: .5em 45em 0 0;
+	padding-left: .5em;
 }
 
 #page{
