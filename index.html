@@ -4,6 +4,7 @@
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+
 </head>
 <body>
 	
@@ -24,5 +25,16 @@
 
 	</div>
 
+<script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	$("#search").submit( function(e) {
+		e.preventDefault();
+		var date = new Date();
+		var seconds = date.getSeconds();
+		var value = $('input[name=post]').val();
+		$("#page").prepend('<p>' + value + ' - ' +  seconds + '</p> <br>');
+	})
+</script>
 </body>
 </html>
