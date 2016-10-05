@@ -8,8 +8,6 @@ var pageContent = document.getElementById("page");
 //adds event listener to submit button in postButton
 postButton.addEventListener("submit", postClicked);
 
-//pageContent.innerHTML = postButton.value;
-
 function postClicked(evt){
     //a bit of tomfoolery to prevent page refresh on submit
     evt.preventDefault();
