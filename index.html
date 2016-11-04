@@ -12,9 +12,9 @@
 			<img src="images/logo.png" alt="the network"/>
 		</div>	
 		<div id="search">
-			<form method="get">
-				<input type="text" name="post" placeholder="thoughts?"/>
-				<input type="submit" value="Post">
+			<form method="get">		
+				<input id = "postID1" type="text" name="post" placeholder="thoughts?"/> <!-- add unique id -->
+				<input type="button" value="Post" onclick="insertText()">	<!-- change type to button , added onClick function  -->
 			</form>
 		</div>
 		<br>
@@ -25,4 +25,29 @@
 	</div>
 
 </body>
+
+
+<script type="text/javascript">
+
+var textArray = [];		//add all text inputs to array
+function insertText () {
+	
+	var getSearchText = document.getElementById("postID1").value;	
+	var date = new Date();
+	var sec  = date.getSeconds();
+	textArray.push(getSearchText + " - "+ sec);		    //adding input text to textArray
+	document.getElementById("postID1").value = null;	//to clear input field, optional
+	//console.log("add search: "+ textArray);			//for debugging
+	
+	var textOutput = "";								
+	for (var i = textArray.length-1; i >= 0 ;i--) {
+        textOutput += textArray[i] + "<br>";			//formatting text for output, added line-height in css file
+    }
+    document.getElementById('page').innerHTML = textOutput;		
+}
+</script>
+
+
+
+
 </html>
