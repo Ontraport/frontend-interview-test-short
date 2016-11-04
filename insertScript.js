@@ -1,16 +1,16 @@
-var textArray = [];		// add all text inputs to array
+var textArray = [];		//adding text inputs to an array
 
 $('#search').children().submit(function(){
-	 insertText();
-	 return false;		// false to stop refresh
+	 insertText();		
+	 return false;		//false to stop refresh
 	});
 
 function insertText(){
 	var getSearchText = document.getElementsByName("post")[0].value; 	
 	var date = new Date();
 	var sec  = date.getSeconds();
-	textArray.push(getSearchText + " - "+ sec);		    //adding input text to textArray
-	document.getElementsByName("post")[0].value = null;	//to clear input field, optional
+	textArray.push(getSearchText + " - "+ sec);		    //push input text to textArray
+	document.getElementsByName("post")[0].value = null;	//to clear input field
 	//console.log("add search: "+ textArray);			//for debugging
 	
 	var textDisplay = "";								
