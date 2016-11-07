@@ -8,59 +8,32 @@ var form = (function() {
 	const INPUT_QUERY = 	'input[type=\"text\"]';
 	const OUTPUT_QUERY = 	'#page';
 
-	// globals
-	var inputsArray =		[];
-
 	// Cache DOM
 	var $form = 			$(FORM_QUERY);
 	var $input = 			$(INPUT_QUERY, $form);
 	var $output = 			$(OUTPUT_QUERY);
 
-	// Bind events
-	$form.addEventListener('submit', function(event) {
-		formSubmit(event);
-	});
-	
 
 	function init() {
-		render();
+		// Bind events
+		$form.addEventListener('submit', function(event) {
+			formSubmit(event);
+		});
 	}
 
-	function reset() {
-		inputsArray = [];
-		init();
-	}
-
-
-	function render() {
-		let content = '';
-
-		for (let value of inputsArray) {
-			content += wrapOutputInHTML(value);
-		}
-
-		$output.innerHTML = content;
+	function render(content) {
+		$output.insertAdjacentHTML('beforeend', wrapOutputInHTML(content));
 	}
 
 	function formSubmit(event) {
 		event.preventDefault();
 
 		if ($input.value) {
-			inputsArray.push(normalizeInputValue($input.value));
+			render(addTimestamp($input.value));
 			$input.value = '';
-			render();
 		} else {
-			alert('Input a non-empty value!');
+			alert('Input can\'t be empty!');
 		}
-	}
-
-	function wrapOutputInHTML(value) {
-		return `<p>${value}</p>`;
-	}
-
-	function normalizeInputValue(value) {
-		let date = new Date();
-		return `${value} - ${date.getSeconds()}`;
 	}
 
 
@@ -70,11 +43,19 @@ var form = (function() {
 		return context.querySelector(selector);
 	}
 
+	function wrapOutputInHTML(value) {
+		return `<p>${value}</p>`;
+	}
+
+	function addTimestamp(value) {
+		let date = new Date();
+		return `${value} - ${date.getSeconds()}`;
+	}
+
 
 	// API
 	form = {
-		init: init,
-		reset: reset
+		init: init
 	}
 
 
