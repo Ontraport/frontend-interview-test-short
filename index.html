@@ -27,12 +27,21 @@
 	</div>
 
 	<script>
+		// Select the form
 		var form = document.querySelector("form");
+
+		// Add event listener
 		form.addEventListener("submit", function(event) {
+
+			// Get the seconds when submitted
 			seconds = new Date().getSeconds();
-			var page = document.getElementById("page"),
-				paragraph = document.createElement('p');
+
+			var page = document.getElementById("page");
+
+			// Create the new paragraph item and add content
+			var paragraph = document.createElement('p');
 			paragraph.innerHTML = form.elements.post.value + " - " + seconds;
+
 			page.insertBefore(paragraph, page.firstChild);
 			event.preventDefault();
 		});
