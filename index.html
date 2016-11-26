@@ -1,28 +1,53 @@
 <!DOCTYPE HTML >
 <html>
+
 <head>
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
+
 <body>
-	
+
 	<div id="header">
 		<div id="logo">
-			<img src="images/logo.png" alt="the network"/>
-		</div>	
+			<img src="images/logo.png" alt="the network" />
+		</div>
 		<div id="search">
 			<form method="get">
-				<input type="text" name="post" placeholder="thoughts?"/>
+				<input type="text" name="post" placeholder="thoughts?" />
 				<input type="submit" value="Post">
 			</form>
 		</div>
 		<br>
 	</div>
-	
+
 	<div id="page">
 
 	</div>
 
+	<script>
+		// Select the form
+		var form = document.querySelector("form");
+
+		// Add event listener
+		form.addEventListener("submit", function(event) {
+
+			// Get the seconds when submitted
+			seconds = new Date().getSeconds();
+
+			var page = document.getElementById("page");
+
+			// Create the new paragraph item and add content
+			var paragraph = document.createElement('p');
+			paragraph.innerHTML = form.elements.post.value + " - " + seconds;
+
+			page.insertBefore(paragraph, page.firstChild);
+			event.preventDefault();
+		});
+
+	</script>
+
 </body>
+
 </html>

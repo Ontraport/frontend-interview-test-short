@@ -1,0 +1,19 @@
+{
+  "name": "frontend-interview-test-short",
+  "version": "1.0.0",
+  "description": "ONTRAPORT Front-End Evaluation, Short Test =============================",
+  "main": "",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ontraport/frontend-interview-test-short.git"
+  },
+  "author": "Kim Todd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ontraport/frontend-interview-test-short/issues"
+  },
+  "homepage": "https://github.com/Ontraport/frontend-interview-test-short#readme"
+}
