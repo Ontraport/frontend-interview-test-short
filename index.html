@@ -4,13 +4,14 @@
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
-	
+
 	<div id="header">
 		<div id="logo">
 			<img src="images/logo.png" alt="the network"/>
-		</div>	
+		</div>
 		<div id="search">
 			<form method="get">
 				<input type="text" name="post" placeholder="thoughts?"/>
@@ -19,10 +20,29 @@
 		</div>
 		<br>
 	</div>
-	
+
 	<div id="page">
 
 	</div>
+
+	<script>
+
+	$(document).ready(function() {
+		$("#search").submit(function (e) {
+			// prevents refresh on submit
+			e.preventDefault();
+			// gets second from browser time
+			var sec = new Date().getSeconds();
+			// gets value from input box
+			var text = $("input[name='post']").val();
+			// creates DOM object
+			var out = "<p>" + text + " - " + sec + "</p>";
+			// prepends
+			$("#page").prepend(out);
+		});
+	});
+
+	</script>
 
 </body>
 </html>
