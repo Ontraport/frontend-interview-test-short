@@ -429,7 +429,7 @@ input[type="search"] {
 }
 
 /*
- * Removes inner padding and searchComponent cancel button in S5, Chrome on OS X
+ * Removes inner padding and search cancel button in S5, Chrome on OS X
  */
 
 input[type="search"]::-webkit-search-decoration,
