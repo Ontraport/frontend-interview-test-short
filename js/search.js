@@ -12,12 +12,14 @@ const render = (targetObj, value) => {
 }
 
 (function(){
+    let form = $('#search form')
+    let input = $(form.find('input[type="text"]'))
+    let page = $('#page')
+
     $('#search form').submit(function(e){
         e.preventDefault()
-
-        let input = $($(this).find('input[type="text"]'))
-
-        render($('#page'), getValue(input) + appendDateInSeconds())
+        
+        render(page, getValue(input) + appendDateInSeconds())
 
         input.select()
     })
