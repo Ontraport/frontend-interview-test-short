@@ -4,13 +4,35 @@
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+
+				// When user presses "Post"...
+				$("form").submit(function(event){
+
+					// variables to create "seconds" of the current browser date
+					var date = new Date();
+					var seconds = date.getSeconds();
+
+					// data user entered in the post
+					var userPost = $("input").val();
+
+					// prepend "userPost" w/ "seconds" to #page
+					$("#page").prepend(userPost + " - " + seconds + "<br/>" + "<br/>").show();
+
+					// return false enables the form not to refresh
+					return false;
+				});
+		});
+	</script>
 </head>
 <body>
-	
+
 	<div id="header">
 		<div id="logo">
 			<img src="images/logo.png" alt="the network"/>
-		</div>	
+		</div>
 		<div id="search">
 			<form method="get">
 				<input type="text" name="post" placeholder="thoughts?"/>
@@ -19,7 +41,7 @@
 		</div>
 		<br>
 	</div>
-	
+
 	<div id="page">
 
 	</div>
