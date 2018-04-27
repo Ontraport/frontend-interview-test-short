@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('input#addthoguht').click(function() {
+    $('input#addthought').click(function() {
         newthought = $('input#thought').val();
         dt = new Date();
         secs = dt.getSeconds();
