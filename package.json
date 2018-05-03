@@ -1,0 +1,8 @@
+{
+  "name": "frontend-interview-test-short",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:quiltykim/frontend-interview-test-short.git",
+  "author": "Quilty Kim <quiltykim@quiltys_arch>",
+  "license": "MIT"
+}
