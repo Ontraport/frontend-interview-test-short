@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(){
   })
 
 // Notes/thoughts
-// Usually I would have assigned an ID to each input tag
+// Usually I would have assigned an ID to each (form, input) tag
 // This way I could have located the exact tag even if their location changed.
 
 
