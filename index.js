@@ -3,12 +3,15 @@ document.addEventListener("DOMContentLoaded", function(){
   })
 const page = document.getElementById('page')
 const form = document.forms[0]
-let postText = form.children.post
-let submit = form.lastElementChild
+const postText = form.children.post
+const submit = form.lastElementChild
 
 
 submit.addEventListener('click', (e)=> {
+  e.preventDefault()
   let textValue = e.target.parentElement.children.post.value
-  console.log(textValue);
-  debugger
+  let p = document.createElement('p')
+  p.innerText = textValue
+  page.prepend(p)
+
 });
