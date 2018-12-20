@@ -10,8 +10,8 @@
 		$('input[value=Post]').on('click',function(event){ /* Check if form was submitted */
 			var $thoughts = $("#search").find('input').val(); /* Find input field data */
 			let seconds= new Date().getSeconds();
-			var $seconds = 	seconds;  /* Find seconds */
-			var $answer = ($thoughts+' - '+$seconds+' <br />');  /* Combine & break data  */
+			/* var $seconds = 	seconds;   Find seconds */
+			var $answer = ($thoughts+' - '+seconds+' <br />');  /* Combine & break data  */
 		$('#page').prepend($answer);  /* Add last input to top of list */
 		return false;  /* Allow the browser to place multiple inputs */
 		
