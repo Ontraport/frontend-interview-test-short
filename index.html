@@ -4,6 +4,22 @@
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		$('input[value=Post]').on('click',function(event){ /* Check if form was submitted */
+			var $thoughts = $("#search").find('input').val(); /* Find input field data */
+			var dNow = new Date(); /* Set Date Time */
+			var utc = new Date(dNow.getTime() + dNow.getTimezoneOffset() * 60000)
+			var utcdate= (utc.getMonth()+1) + '/' + utc.getDate() + '/' + utc.getFullYear() + ' ' + utc.getHours() + ':' + utc.getMinutes() + ':' + utc.getSeconds();
+			var $day = 	utc.getSeconds();  /* Find seconds */
+			var $answer = ($thoughts+' - '+$day+' <br />');  /* Combine & break data  */
+		$('#page').prepend($answer);  /* Add last input to top of list */
+		return false;  /* Allow the browser to place multiple inputs */
+		document.write($answer);  /* Print to Div */
+	});
+});
+</script>
 </head>
 <body>
 	
