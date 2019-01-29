@@ -26,3 +26,27 @@
 
 </body>
 </html>
+<script>
+//Call this to get input from top input and concat current date seconds to html string
+const inputConcat = () =>{
+	//Get the input value
+	let input = document.querySelector('input[name="post"]').value
+	//Get the Time
+	let time = new Date().getSeconds()
+	//Format for insertion
+	let string  = `<p>${input}-${time}</p>`
+	//Insert into element
+	document.querySelector('#page').insertAdjacentHTML('afterBegin',string)
+}
+
+//Add our submit listener
+document.querySelector('form').addEventListener('submit',(e)=>{
+	//Prevent default form submission
+	e.preventDefault()
+	//Call the function to get our values
+	inputConcat()
+	//Clear the Input element
+	return document.querySelector('input[name="post"]').value=''
+})
+
+</script>
