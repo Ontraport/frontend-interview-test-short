@@ -12,14 +12,28 @@
 			<img src="images/logo.png" alt="the network"/>
 		</div>	
 		<div id="search">
-			<form method="get">
-				<input type="text" name="post" placeholder="thoughts?"/>
+			<form onsubmit="submitFunction(event)" method="get">
+				<input id="page-input" type="text" name="post" placeholder="thoughts?"/>
 				<input type="submit" value="Post">
 			</form>
 		</div>
 		<br>
 	</div>
-	
+
+	<script>
+		function submitFunction() {
+			let date = new Date();
+			let seconds = date.getSeconds();
+			
+			document.getElementById("page")
+				.insertAdjacentHTML("afterbegin", 
+				document.getElementById("page-input").value
+				+ " - " + seconds + "<br><br>");
+			
+			event.preventDefault();
+		}
+	</script>
+
 	<div id="page">
 
 	</div>
