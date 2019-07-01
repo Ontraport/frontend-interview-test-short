@@ -19,7 +19,23 @@ function handleSubmit(event) {
   event.preventDefault();
 
   if (value) {
+    prependToList(createListItem(value));
     getForm().post.value = '';
   }
 }
 
+function prependToList(listItem) {
+  const list = document.getElementById('pageList');
+  if (list.childElementCount > 0) {
+    list.insertBefore(listItem, list.firstChild);
+  } else {
+    list.append(listItem);
+  }
+}
+
+function createListItem(value) {
+  let seconds = new Date().getSeconds();
+  let newAddition = document.createElement('li');
+  newAddition.textContent = value + ' - ' + seconds;
+  return newAddition;
+}
