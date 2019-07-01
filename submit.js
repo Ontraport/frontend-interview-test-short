@@ -1,11 +1,9 @@
+const form = Array.from(document.forms).pop();
+
 (function() {
-  getForm().onsubmit = handleSubmit;
+  form.onsubmit = handleSubmit;
   initializeList();
 })();
-
-function getForm() {
-  return Array.from(document.forms).pop();
-}
 
 function initializeList() {
   const page = document.getElementById('page');
@@ -15,12 +13,12 @@ function initializeList() {
 }
 
 function handleSubmit(event) {
-  const value = getForm().post.value;
+  const value = form.post.value;
   event.preventDefault();
 
   if (value) {
     prependToList(createListItem(value));
-    getForm().post.value = '';
+    form.post.value = '';
   }
 }
 
