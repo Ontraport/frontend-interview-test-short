@@ -83,6 +83,8 @@ background: rgba( 255, 255, 255, 0.3 );
 
 .rand1{
 	
+#pageList {
+  list-style: none;
 }
 .rand2{
 	
@@ -94,3 +96,7 @@ background: rgba( 255, 255, 255, 0.3 );
 
 
 
+.listItem {
+  width: 100%;
+  padding: 4px 0;
+}

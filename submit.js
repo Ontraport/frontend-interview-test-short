@@ -37,5 +37,6 @@ function createListItem(value) {
   let seconds = new Date().getSeconds();
   let newAddition = document.createElement('li');
   newAddition.textContent = value + ' - ' + seconds;
+  newAddition.classList.add('listItem');
   return newAddition;
 }
