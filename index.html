@@ -3,10 +3,9 @@
 <head>
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
-	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<link rel="stylesheet" type="text/css" href="styles.css" />	
 </head>
-<body>
-	
+<body>	
 	<div id="header">
 		<div id="logo">
 			<img src="images/logo.png" alt="the network"/>
@@ -18,11 +17,41 @@
 			</form>
 		</div>
 		<br>
-	</div>
-	
+	</div>	
 	<div id="page">
 
 	</div>
+	<script type="text/javascript">
+		var searchDiv = document.getElementById("search");
+		if(searchDiv){			
+			var searchForm = searchDiv.getElementsByTagName("form")[0];			
+			searchForm.onsubmit = function(e){
+				e.preventDefault();
+				var pageElem = document.getElementById("page");
+				if(pageElem){
+					var newPost = document.createElement("p");
+					newPost.className = "post";
+					
+					var formContent = document.createElement("span");
+					formContent.className = "postValue formContent";
+					formContent.innerText = searchForm.post.value;
+					
+					var dash = document.createElement("span");
+					dash.innerText = " - ";					
+					
+					var currentSeconds = document.createElement("span");
+					currentSeconds.className = "postValue currentSeconds";
+					var currentDateTime = new Date();					
+					currentSeconds.innerText = currentDateTime.getSeconds();					
 
+					newPost.append(formContent);
+					newPost.append(dash);
+					newPost.append(currentSeconds);
+					
+					pageElem.prepend(newPost);
+				}				
+			}
+		}
+	</script>
 </body>
 </html>
