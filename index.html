@@ -29,20 +29,12 @@
 				e.preventDefault();
 				var pageElem = document.getElementById("page");
 				if(pageElem){
-					var newPost = document.createElement("p");
-					newPost.className = "post";
+					var currentDateTime = new Date();				
 					
-					var formContent = document.createElement("span");
-					formContent.className = "postValue formContent";
-					formContent.innerText = searchForm.post.value;
-					
-					var dash = document.createElement("span");
-					dash.innerText = " - ";					
-					
-					var currentSeconds = document.createElement("span");
-					currentSeconds.className = "postValue currentSeconds";
-					var currentDateTime = new Date();					
-					currentSeconds.innerText = currentDateTime.getSeconds();					
+					var newPost = CreateElement("p", "", "post");
+					var formContent = CreateElement("span", ScrubInput(searchForm.post.value), "postValue formContent");								
+					var dash = CreateElement("span", " - ", "postDash");					
+					var currentSeconds = CreateElement("span", currentDateTime.getSeconds(), "postValue currentSeconds");					
 
 					newPost.append(formContent);
 					newPost.append(dash);
@@ -51,6 +43,20 @@
 					pageElem.prepend(newPost);
 				}				
 			}
+		}
+		function ScrubInput(_input){
+			var maxLength = 50;
+			var input = _input;
+			if(input.length > maxLength){
+				input = input.substr(0, maxLength) + "...";
+			}
+			return input;
+		}
+		function CreateElement(_elementType, _text, _className){
+			var el = document.createElement(_elementType);
+			el.innerText = _text;
+			el.className = _className;
+			return el;
 		}
 	</script>
 </body>
