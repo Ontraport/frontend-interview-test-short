@@ -12,8 +12,8 @@
 			<img src="images/logo.png" alt="the network"/>
 		</div>	
 		<div id="search">
-			<form method="get">
-				<input type="text" name="post" placeholder="thoughts?"/>
+			<form method="get" id="form">
+				<input type="text" id="post" name="post" placeholder="thoughts?"/>
 				<input type="submit" value="Post">
 			</form>
 		</div>
@@ -24,5 +24,19 @@
 
 	</div>
 
+	<script>
+		const form = document.getElementById("form");
+		form.addEventListener("submit", addThought);
+
+		function addThought(e) {
+			e.preventDefault();
+			const page = document.getElementById("page");
+			const post = document.getElementById("post");
+			const d = new Date();
+
+			page.innerHTML += `<p>${post.value} - ${d.getSeconds()}</p>`;
+			post.value = "";
+		}
+	</script>
 </body>
 </html>
