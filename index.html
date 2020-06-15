@@ -34,7 +34,7 @@
 			const post = document.getElementById("post");
 			const d = new Date();
 
-			page.innerHTML += `<p>${post.value} - ${d.getSeconds()}</p>`;
+			page.innerHTML = `<p>${post.value} - ${d.getSeconds()}</p>` + page.innerHTML;
 			post.value = "";
 		}
 	</script>
