@@ -19,7 +19,7 @@ Thank you for taking the time to take our test.
 1. To get started fork this repo into your own GitHub account. 
 
 2. Without changing the existing form markup in `index.html`, create a script that on form submit 
-   prepends the contents of the from `<input type="text" name="post" placeholder="thoughts?"/>` 
+   prepends the contents of the form `<input type="text" name="post" placeholder="thoughts?"/>` 
    to `<div id="page">`. 
 
 3. For each input value prepended, concatenate the second of the current browser date to 
