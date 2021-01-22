@@ -16,6 +16,7 @@ $("input[type='submit']").click(function(e) {
 })
 
 
+
 //////// Vanilla JS ////////
 /*
 // listens for a click 
