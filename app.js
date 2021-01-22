@@ -1,17 +1,20 @@
 //////// jQuery ////////
+
 // on click of input type submit
 $("input[type='submit']").click(function(e) {
     // prevents page refresh
     e.preventDefault();
 
-    const info = $("input[name='post']").val();
+    const content = $("input[name='post']").val();
     const date = new Date();
+    const page =  $("#page");
 
     // prepends value into div with an id of page and get date seconds 
-    $('#page').prepend(`${info} - ${date.getSeconds()} <br/>`);
+    page.prepend(`<p>${content} - ${date.getSeconds()}</p> <br/>`);
     // clear input field of text after click
     $("input[name='post']").val('');
 })
+
 
 //////// Vanilla JS ////////
 /*
@@ -22,12 +25,15 @@ document.addEventListener('click', function (event) {
 
     if(event.target.matches("input[type='submit']")) {
         const content = document.querySelector("input[name='post']").value;
+        const post = document.createElement("p");
         const date = new Date();
         const newLine = document.createElement("br");
+        const page =  document.getElementById("page");
 
         // prepends values
-        document.getElementById("page").prepend(content + " - " + date.getSeconds());
-        document.getElementById("page").prepend(newLine);
+        post.textContent = content + " - " + date.getSeconds();
+        page.prepend(post);
+        page.prepend(newLine);
         document.querySelector("input[name='post']").value = '';
     }
 })
