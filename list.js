@@ -3,5 +3,5 @@ $("input[type='submit']").on("click",function(event){
     let txtBox=$("input[type='text']");
     let todoText = txtBox.val();
     txtBox.val("");
-    $("#page").append("<li> "+todoText+"</li>");
+    $("#page").prepend("<p> "+todoText+"</p>");
 });
