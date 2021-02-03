@@ -24,5 +24,29 @@
 
 	</div>
 
+	<script type="text/javascript">
+		const formElement = document.forms[0];
+		const inputElement = document.getElementsByName('post')[0];
+		const outputElement = document.getElementById('page');
+		const submitButton = document.querySelectorAll('input[type=submit]')[0];
+		submitButton.disabled = true;
+		let outputText;
+
+		inputElement.oninput = () => {
+			submitButton.disabled = !inputElement.value;
+		};
+
+		formElement.onsubmit = (x) => {
+			const curSeconds = new Date().getSeconds();
+			const entry = `${inputElement.value} - ${curSeconds}`;
+			outputText = outputText ? `${entry}\n${outputText}` : entry;
+			outputElement.innerText = outputText;
+			inputElement.value = null;
+			inputElement.focus();
+			submitButton.disabled = true;
+			return false;
+		};
+	</script>
+
 </body>
 </html>
