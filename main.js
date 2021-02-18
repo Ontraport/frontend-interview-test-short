@@ -1,8 +1,8 @@
 const $form = document.querySelector('form');
 const $page = document.querySelector('#page');
-const [ $inputBox, $postButton ] = $form.children;
+const [ $inputBox ] = $form.children;
 
-$postButton.addEventListener('click', () => {
+$form.addEventListener('submit', () => {
   event.preventDefault();
   const $text = document.createElement('p');
   $text.textContent = `${$inputBox.value} - ${new Date().getSeconds()}`;
