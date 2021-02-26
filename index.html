@@ -22,7 +22,31 @@
 	
 	<div id="page">
 
-	</div>
+    </div>
+    
+    <script>
+        // function to display posts
+        function display_posts(div_name, data) {
+            document.getElementById(div_name).innerText += data;
+        }
+
+        // event listener for form submit
+        document.getElementById('search')
+                .addEventListener('submit', function() {
+
+            event.preventDefault();
+
+            let today = new Date();
+            let seconds = today.getSeconds();
+            let post = document.getElementsByName("post")[0].value;
+
+            display_posts('page', post + " - " + seconds + "\n");
+
+            // resets form input
+            document.getElementsByName("post")[0].value='';
+
+        });
+    </script>
 
 </body>
 </html>
