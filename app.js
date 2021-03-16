@@ -12,15 +12,16 @@ postButton.addEventListener("click", (e) => {
 		// Getting seconds by new Date and getSeconds method
 		const browserSecond = new Date().getSeconds();
 
-		//For the best optimization, I use innerHTML to append the value,then
-		// use appendChild to append that value to avoid the re-render issue by innerHTML
+		// Create a new Paragraph and append the value to it
 		const newNode = document.createElement("p");
 		newNode.innerHTML = `${textInput} - ${browserSecond}`;
-		page.appendChild(newNode);
+
+		// Use insertBefore method to display the value upside down
+		page.insertBefore(newNode, page.childNodes[0]);
 
 		// Reset the input text
 		input.value = "";
 	} else {
-		alert("Please input text!!!")
+		alert("Please input text!!!");
 	}
-})
+});
