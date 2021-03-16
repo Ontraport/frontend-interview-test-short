@@ -22,6 +22,6 @@ postButton.addEventListener("click", (e) => {
 		// Reset the input text
 		input.value = "";
 	} else {
-		alert("Please input text!!!");
+		alert("Please input text!!!")
 	}
 });
