@@ -23,6 +23,22 @@
 	<div id="page">
 
 	</div>
+<script>
+	const inputBox = document.getElementsByName('post')[0];
+	const outputBox = document.getElementById('page');
+	const form = document.getElementsByTagName('form')[0];
 
+	function prependRow(event) {
+		const d = new Date();
+		const oldValue = outputBox.innerHTML;
+		const newRow = '<p>' + inputBox.value + ' - ' + d.getSeconds() + '</p>' ;
+
+		outputBox.innerHTML = newRow + oldValue;
+		event.preventDefault();
+	}
+
+	form.addEventListener('submit', prependRow);
+</script>
 </body>
 </html>
+
