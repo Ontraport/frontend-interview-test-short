@@ -1,28 +1,42 @@
-<!DOCTYPE HTML >
+<!DOCTYPE HTML>
 <html>
+
 <head>
 	<title>The network</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
+
 <body>
-	
+
 	<div id="header">
 		<div id="logo">
-			<img src="images/logo.png" alt="the network"/>
-		</div>	
+			<img src="images/logo.png" alt="the network" />
+		</div>
 		<div id="search">
 			<form method="get">
-				<input type="text" name="post" placeholder="thoughts?"/>
+				<input type="text" name="post" placeholder="thoughts?" />
 				<input type="submit" value="Post">
 			</form>
 		</div>
 		<br>
 	</div>
-	
+
 	<div id="page">
 
 	</div>
 
+	<script>
+		let items = []
+		document.getElementById("search").addEventListener("submit", function (e) {
+			e.preventDefault();
+			let postValue = e.target.post.value;
+			let seconds = new Date().getUTCSeconds();
+			items.unshift(`${postValue} - ${seconds}`);
+			document.getElementById("page").innerHTML = items.map(item => `<div>${item}</div>`).join(""); 
+			e.target.post.value = "";
+		})
+	</script>
 </body>
+
 </html>
