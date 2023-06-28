@@ -26,10 +26,10 @@
 
 </body>
 <script>
-	const form = document.querySelector('form');
+	const form = document.querySelector('#search form');
 	const input = form.querySelector('input[name="post"]');
 	const page = document.querySelector('#page');
-	
+
 	form.addEventListener('submit', event => {
 		event.preventDefault();
 		const thoughts = input.value;
