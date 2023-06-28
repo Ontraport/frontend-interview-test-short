@@ -24,20 +24,20 @@
 
 	</div>
 
+	<script>
+		const form = document.querySelector('#search form');
+		const input = form.querySelector('input[name="post"]');
+		const page = document.querySelector('#page');
+	
+		form.addEventListener('submit', event => {
+			event.preventDefault();
+			const thoughts = input.value;
+			const timestamp = new Date().toLocaleString().slice(-5, -3);
+			const p = document.createElement('p');
+			p.append(`${thoughts} - ${timestamp}`);
+			page.prepend(p);
+			form.reset();
+		})
+	</script>
 </body>
-<script>
-	const form = document.querySelector('#search form');
-	const input = form.querySelector('input[name="post"]');
-	const page = document.querySelector('#page');
-
-	form.addEventListener('submit', event => {
-		event.preventDefault();
-		const thoughts = input.value;
-		const timestamp = new Date().toLocaleString().slice(-5, -3);
-		const p = document.createElement('p');
-		p.append(`${thoughts} - ${timestamp}`);
-		page.prepend(p);
-		form.reset();
-	})
-</script>
 </html>
