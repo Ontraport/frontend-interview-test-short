@@ -1,28 +1,54 @@
-<!DOCTYPE HTML >
+<!DOCTYPE html>
 <html>
-<head>
-	<title>The network</title>
-	<link rel="stylesheet" type="text/css" href="normalize.css" />
-	<link rel="stylesheet" type="text/css" href="styles.css" />
-</head>
-<body>
-	
-	<div id="header">
-		<div id="logo">
-			<img src="images/logo.png" alt="the network"/>
-		</div>	
-		<div id="search">
-			<form method="get">
-				<input type="text" name="post" placeholder="thoughts?"/>
-				<input type="submit" value="Post">
-			</form>
-		</div>
-		<br>
-	</div>
-	
-	<div id="page">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <title>The network</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script>
+      const inputEmpty = () => !$("input[name='post']").val().length;
 
-	</div>
+      $(document).ready(function () {
+        //prevent empty messages from being submitted
+        $("input[type='submit']").prop("disabled", inputEmpty());
 
-</body>
+        //disable or enable submit on value change
+        $("input[name='post']").on("input", (e) => {
+          $("input[type='submit']").prop("disabled", inputEmpty());
+        });
+
+        $("form").on("submit", (e) => {
+          const timestamp = e.timeStamp;
+          const input = $("input[name='post']");
+
+          const message = `<p> ${input.val()} - ${new Date(
+            timestamp
+          ).getSeconds()} </p>`;
+
+          $("#page").prepend(message);
+          input.val("");
+
+          $("input[type='submit']").prop("disabled", inputEmpty());
+
+          e.preventDefault();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo">
+        <img src="images/logo.png" alt="the network" />
+      </div>
+      <div id="search">
+        <form method="get">
+          <input type="text" name="post" placeholder="thoughts?" />
+          <input type="submit" value="Post" />
+        </form>
+      </div>
+      <br />
+    </div>
+
+    <div id="page"></div>
+  </body>
 </html>
