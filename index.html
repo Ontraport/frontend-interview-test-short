@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="normalize.css" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script>
-      const inputEmpty = () => !$("input[name='post']").val().length;
+      const inputEmpty = () => !$("input[name='post']").val().trim().length;
 
       $(document).ready(function () {
         //prevent empty messages from being submitted
