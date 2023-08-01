@@ -6,22 +6,39 @@
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
-	
-	<div id="header">
-		<div id="logo">
-			<img src="images/logo.png" alt="the network"/>
-		</div>	
-		<div id="search">
-			<form method="get">
-				<input type="text" name="post" placeholder="thoughts?"/>
-				<input type="submit" value="Post">
-			</form>
+	<script>
+		function handleSubmit(e) {
+			e.preventDefault();
+			let newEntry = {
+				post: "post",
+			};
+			addNewEntry(newEntry)
+		}
+	</script>
+		<div id="header">
+			<div id="logo">
+				<img src="images/logo.png" alt="the network"/>
+			</div>	
+			<div id="search">
+				<form acton="/page.php" method="get">
+					<input type="text" name="post" placeholder="thoughts?"/>
+					<input type="submit" value="Post" onClick={newEntry}>
+				</form>
+				<script>
+				function newEntry (form) {
+					var inputValue = form.post.value;
+				}
+				</script>
+			</div>
+			<br>
 		</div>
-		<br>
-	</div>
-	
-	<div id="page">
 
+	<div id="page">
+		<script>
+			function displayPost(newEntry) {
+				{post.map}
+			}
+		</script>
 	</div>
 
 </body>
